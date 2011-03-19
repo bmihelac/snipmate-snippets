@@ -62,8 +62,11 @@ snippet m2m
 snippet o2o
 	${1:FIELDNAME} = models.OneToOneField(${2:OtherModel}${3:, parent_link=True}${4:, related_name=''}${5:, limit_choices_to=}${6:, to_field=''})
 
+# i18n snippets
 snippet ug
 	from django.utils.translation import ugettext_lazy as _
+snippet _
+	_('${1:}')
 	
 # Code Skeletons
 
@@ -75,20 +78,19 @@ snippet form
 snippet model
 	class ${1:ModelName}(models.Model):
 		"""${2:docstring}"""
-		${3}
-		
+		${3:#model fields}
+	
 		class Meta:
-			${4}
-		
+			verbose_name = _('${4:$1}')
+			verbose_name_plural = _('${5:$1s}')
+			ordering = [${6}]
+	
 		def __unicode__(self):
-			${5}
-		
-		def save(self, force_insert=False, force_update=False):
-			${6}
-		
+			${7:return "$1"}
+	
 		@models.permalink
 		def get_absolute_url(self):
-			return ('${7:view_or_url_name}' ${8})
+			return ('${8:view_or_url_name}'${9:, [str(self.id)]})
 
 snippet modeladmin
 	class ${1:ModelName}Admin(admin.ModelAdmin):
