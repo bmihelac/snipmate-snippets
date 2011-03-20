@@ -132,3 +132,13 @@ snippet urlizetrunc
 snippet wordwrap
 	wordwrap:${1}
 
+# uni form snippets
+snippet loaduniform
+	{% load uni_form_tags %}
+
+snippet uniform
+	<form action="${1:.}" method="${2:post}" class="uniForm${3: }">
+		{% csrf_token %}
+		{{ ${4:form}|as_uni_form }}
+		${5:<p><input type="submit" name="" value="submit" id=""/></p>}
+	</form>
