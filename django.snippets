@@ -63,10 +63,14 @@ snippet o2o
 	${1:FIELDNAME} = models.OneToOneField(${2:OtherModel}, verbose_name=_('${3:$1}')${4:, parent_link=True}${5:, related_name=''}${6:, limit_choices_to=}${7:, to_field=''})
 
 # i18n snippets
-snippet ug
+snippet importugettext
 	from django.utils.translation import ugettext_lazy as _
 snippet _
 	_('${1:}')
+snippet importreverse:
+	from django.core.urlresolvers import reverse
+snippet reverse
+	reverse('${1:viewname}'${2:, args=[]}${3:, kwargs={}})
 	
 # Code Skeletons
 
