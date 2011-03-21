@@ -31,7 +31,7 @@ snippet filepath
 snippet float
 	${1:FIELDNAME} = models.FloatField(_('${2:$1}'))
 snippet image
-	${1:FIELDNAME} = models.ImageField(upload_to=${2:path/for/upload}${3:, height_field=height, width_field=width}${4:, max_length=100})
+	${1:FIELDNAME} = models.ImageField(upload_to=${2:path/for/upload}, verbose_name=_('${3:$1}'))
 snippet int
 	${1:FIELDNAME} = models.IntegerField(_('${2:$1}'))
 snippet ip
