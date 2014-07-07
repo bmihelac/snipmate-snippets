@@ -13,15 +13,37 @@ snippet auto
 snippet bool
 	${1:FIELDNAME} = models.BooleanField(${2:default=True})
 snippet char
-	${1:FIELDNAME} = models.CharField(_('${2:$1}'), max_length=${3:100}${4:, blank=True})
+	${1:FIELDNAME} = models.CharField(
+		_('${2:$1}'),
+		max_length=${3:100},
+		blank=True
+	)
 snippet comma
 	${1:FIELDNAME} = models.CommaSeparatedIntegerField(max_length=${2}${3:, blank=True})
 snippet date
-	${1:FIELDNAME} = models.DateField(_('${2:$1}'), ${3:auto_now_add=True, auto_now=True}${4:, blank=True, null=True})
+	${1:FIELDNAME} = models.DateField(
+		_('${2:$1}'),
+		${3:auto_now_add=True,
+		auto_now=True},
+		blank=True,
+		null=True
+	)
 snippet datetime
-	${1:FIELDNAME} = models.DateTimeField(_('${2:$1}'), ${3:auto_now_add=True, auto_now=True}${4:, blank=True, null=True})
+	${1:FIELDNAME} = models.DateTimeField(
+	_('${2:$1}'),
+		${3:auto_now_add=True,
+		auto_now=True},
+		blank=True,
+		null=True
+	)
 snippet decimal
-	${1:FIELDNAME} = models.DecimalField(_('${2:$1}'), max_digits=${3}, decimal_places=${4})
+	${1:FIELDNAME} = models.DecimalField(
+		_('${2:$1}'),
+		max_digits=${3},
+		decimal_places=${4},
+		blank=True,
+		null=True
+	)
 snippet email
 	${1:email} = models.EmailField(_('${2:$1}'), max_length=${3:75}${4:, blank=True})
 snippet file
@@ -47,7 +69,10 @@ snippet slug
 snippet smallint
 	${1:FIELDNAME} = models.SmallIntegerField(_('${2:$1}'))
 snippet text
-	${1:FIELDNAME} = models.TextField(_('${2:$1}')${3:, blank=True})
+	${1:FIELDNAME} = models.TextField(
+		_('${2:$1}'),
+		blank=True
+	)
 snippet time
 	${1:FIELDNAME} = models.TimeField(_('${2:$1}'), ${3:auto_now_add=True, auto_now=True}${4:, blank=True, null=True})
 snippet url
