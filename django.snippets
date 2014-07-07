@@ -11,7 +11,10 @@
 snippet auto
 	${1:FIELDNAME} = models.AutoField()
 snippet bool
-	${1:FIELDNAME} = models.BooleanField(${2:default=True})
+	${1:FIELDNAME} = models.BooleanField(
+		_('${2:$1}'),
+		default=${3:True},
+	)
 snippet char
 	${1:FIELDNAME} = models.CharField(
 		_('${2:$1}'),
@@ -81,7 +84,11 @@ snippet xml
 	${1:FIELDNAME} = models.XMLField(_('${2:$1}'), schema_path=${3:None}${4:, blank=True})
 # Relational Fields
 snippet fk
-	${1:FIELDNAME} = models.ForeignKey(${2:OtherModel}, verbose_name=_('${3:$1}')${4:, related_name=''}${5:, limit_choices_to=}${6:, to_field=''})
+	${1:FIELDNAME} = models.ForeignKey(
+		${2:OtherModel},
+		verbose_name=_('${3:$1}'),
+		${4:, related_name=''}${5:, limit_choices_to=}${6:, to_field=''}
+	)
 snippet m2m
 	${1:FIELDNAME} = models.ManyToManyField(${2:OtherModel}, verbose_name=_('${3:$1}')${4:, related_name=''}${5:, limit_choices_to=}${6:, symmetrical=False}${7:, through=''}${8:, db_table=''})
 snippet o2o
