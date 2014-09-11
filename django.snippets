@@ -50,13 +50,21 @@ snippet decimal
 snippet email
 	${1:email} = models.EmailField(_('${2:$1}'), max_length=${3:75}${4:, blank=True})
 snippet file
-	${1:FIELDNAME} = models.FileField(_('${2:$1}'), upload_to=${3:path/for/upload}${4:, max_length=100})
+	${1:FIELDNAME} = models.FileField(
+		upload_to=${2:path/for/upload},
+		verbose_name=_('${3:$1}'),
+		blank=True
+	)
 snippet filepath
 	${1:FIELDNAME} = models.FilePathField(_('${2:$1}'), path=${3:"/abs/path/to/dir"}${4:, max_length=100}${5:, match="*.ext"}${6:, recursive=True}${7:, blank=True, })
 snippet float
 	${1:FIELDNAME} = models.FloatField(_('${2:$1}'))
 snippet image
-	${1:FIELDNAME} = models.ImageField(upload_to=${2:path/for/upload}, verbose_name=_('${3:$1}'))
+	${1:FIELDNAME} = models.ImageField(
+		upload_to=${2:path/for/upload},
+		verbose_name=_('${3:$1}'),
+		blank=True
+	)
 snippet int
 	${1:FIELDNAME} = models.IntegerField(_('${2:$1}'))
 snippet ip
