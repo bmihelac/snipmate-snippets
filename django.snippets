@@ -158,3 +158,10 @@ snippet stackedinline
 		model = $1
 		extra = ${2:3}
 
+# imports
+snippet iset
+	from django.conf import settings
+
+# my
+snippet browser
+	from impckg.utils.test.browser import display; display(response.content)
