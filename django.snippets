@@ -165,3 +165,10 @@ snippet iset
 # my
 snippet browser
 	from impckg.utils.test.browser import display; display(response.content)
+
+
+snippet modeltranslation
+	class ${1:ModelName}Options(TranslationOptions):
+		fields = (${2})
+	
+	translator.register($1, $1Options)
